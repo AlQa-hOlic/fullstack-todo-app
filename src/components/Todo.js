@@ -1,6 +1,8 @@
 import React from "react";
 import classNames from "classnames";
 
+import SPCLink from "./SPCLink";
+
 class Todo extends React.PureComponent {
   constructor(props) {
     super(props);
@@ -65,6 +67,7 @@ class Todo extends React.PureComponent {
         {loading && <h3 className={classes.subheading}>loading...</h3>}
         {!loading && (
           <>
+            <SPCLink classes={classes} to="/" text="Back" />
             <div className={classes.todoCard}>
               <h1 className={classes.heading}>{data.title}</h1>
               <h3 className={classes.subheading}>{data.description}</h3>

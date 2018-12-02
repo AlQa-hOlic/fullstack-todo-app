@@ -1,6 +1,7 @@
 import React from "react";
 import TodoList from "./TodoList";
 import { Link } from "react-router-dom";
+import SPCLink from "./SPCLink";
 class App extends React.PureComponent {
   constructor(props) {
     super(props);
@@ -41,6 +42,11 @@ class App extends React.PureComponent {
         )}
         {!loading && (
           <>
+            <SPCLink
+              text="Github"
+              to="https://github.com/AlQa-hOlic"
+              classes={classes}
+            />
             <TodoList todos={todos} classes={classes} />
             <Link to="/add" className={classes.todo}>
               {"++  Add Todo  ++"}

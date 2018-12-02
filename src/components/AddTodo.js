@@ -1,5 +1,7 @@
 import React from "react";
 
+import SPCLink from "./SPCLink";
+
 class AddTodo extends React.PureComponent {
   constructor(props) {
     super(props);
@@ -35,6 +37,7 @@ class AddTodo extends React.PureComponent {
     const { classes } = this.props;
     return (
       <>
+        <SPCLink classes={classes} to="/" text="Github" />
         {!this.state.loading && (
           <div className={classes.todoCard}>
             <h1 className={classes.heading}>Title</h1>
