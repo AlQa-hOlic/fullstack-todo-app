@@ -1,0 +1,123 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+input {
+  padding: 1em;
+  border-radius: 5px;
+  border: solid 1px grey;
+}
+
+.root {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.heading {
+  text-align: center;
+  font-family: monospace;
+  font-weight: 300;
+  color: rgba(0, 0, 0, 1);
+  font-size: 4em;
+  margin: 0.5em;
+}
+
+.subheading {
+  font-family: monospace;
+  font-weight: 300;
+  color: rgba(0, 0, 0, 0.7);
+  font-size: 2.5em;
+  margin: 0.5em;
+}
+.todo {
+  font-family: monospace;
+  font-weight: 300;
+  color: rgba(0, 0, 0, 0.9);
+  font-size: 2em;
+  position: relative;
+  padding: 0.5em;
+  cursor: pointer;
+  text-decoration: none;
+  transition: color 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.todo:hover {
+  color: #1eaedb;
+}
+.todo::after {
+  content: "";
+  position: absolute;
+  left: 20%;
+
+  bottom: 7.5%;
+  height: 5%;
+  width: 60%;
+  background-color: #1eaedb;
+  transition: transform 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transform: scale(0);
+}
+.todo:hover::after {
+  transform: scale(1);
+}
+.todoCard {
+  display: flex;
+  flex-direction: column;
+}
+@media (max-width: 700px) {
+  .todoCard {
+    height: 100%;
+  }
+}
+.grow {
+  flex-grow: 1;
+}
+.actions {
+  margin: 1em;
+  display: flex;
+}
+
+.actions .button {
+  flex: 1;
+  transition: background-color 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.actions .button:hover {
+  color: white;
+  background-color: black;
+}
+.actions .deleteButton {
+  color: red;
+  border-color: red;
+  flex: 1;
+  margin-right: 20px;
+  transition: background-color 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.actions .deleteButton:hover {
+  color: white;
+  background-color: red;
+}
+
+.actions .completedButton {
+  flex: 2;
+  transition: background-color 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.actions .completedButton.true {
+  color: green;
+  border-color: green;
+}
+.actions .completedButton.true:hover {
+  color: white;
+  background-color: green;
+}
+
+.actions .completedButton.false {
+  color: red;
+  border-color: red;
+}
+.actions .completedButton.false:hover {
+  color: white;
+  background-color: red;
+}
