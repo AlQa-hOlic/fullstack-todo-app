@@ -44,7 +44,7 @@ class App extends React.PureComponent {
           <>
             <SPCLink
               text="Github"
-              to="https://github.com/AlQa-hOlic"
+              href="https://github.com/AlQa-hOlic"
               classes={classes}
             />
             <TodoList todos={todos} classes={classes} />
