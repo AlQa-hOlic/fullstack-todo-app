@@ -13,17 +13,18 @@ class Todo extends React.PureComponent {
     this.handleDeleteButtonClick = this.handleDeleteButtonClick.bind(this);
   }
   componentDidMount() {
-    fetch("http://localhost:3000/api/todo/" + this.props.match.params._id).then(
-      res => {
-        res.json().then(data => {
-          this.setState({ ...data, loading: false });
-        });
-      }
-    );
+    fetch(
+      "https://my-first-fullstack-todo-app.herokuapp.com/api/todo/" +
+        this.props.match.params._id
+    ).then(res => {
+      res.json().then(data => {
+        this.setState({ ...data, loading: false });
+      });
+    });
   }
   handleCompletedButtonClick() {
     this.setState({ loading: true });
-    fetch("http://localhost:3000/api/todo/", {
+    fetch("https://my-first-fullstack-todo-app.herokuapp.com/api/todo/", {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify({
@@ -43,7 +44,7 @@ class Todo extends React.PureComponent {
   }
   handleDeleteButtonClick() {
     this.setState({ loading: true });
-    fetch("http://localhost:3000/api/todo/", {
+    fetch("https://my-first-fullstack-todo-app.herokuapp.com/api/todo/", {
       method: "DELETE",
       headers: { "content-type": "application/json" },
       body: JSON.stringify({

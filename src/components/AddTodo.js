@@ -17,7 +17,7 @@ class AddTodo extends React.PureComponent {
   }
   handleSubmit() {
     this.setState({ loading: true });
-    fetch("http://localhost:3000/api/todo", {
+    fetch("https://my-first-fullstack-todo-app.herokuapp.com/api/todo", {
       method: "PUT",
       headers: { "content-type": "application/json" },
       body: JSON.stringify({

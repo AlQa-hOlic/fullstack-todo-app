@@ -14,11 +14,13 @@ class App extends React.PureComponent {
     this.pullData();
   }
   pullData() {
-    fetch("http://localhost:3000/api/todo").then(res => {
-      res.json().then(data => {
-        this.setState({ todos: data.data, loading: false });
-      });
-    });
+    fetch("https://my-first-fullstack-todo-app.herokuapp.com/api/todo").then(
+      res => {
+        res.json().then(data => {
+          this.setState({ todos: data.data, loading: false });
+        });
+      }
+    );
   }
   handleChange(e) {
     this.setState({
