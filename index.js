@@ -5,7 +5,7 @@ const cors = require("cors");
 
 var app = express();
 
-app.use(cors({ origin: "http://localhost:9000" }));
+app.use(cors());
 //json parser
 app.use(express.json());
 

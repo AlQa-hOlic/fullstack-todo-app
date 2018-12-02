@@ -37,29 +37,6 @@ module.exports = env => {
               }
             }
           ]
-        },
-        {
-          test: /.scss/,
-          exclude: /node_modules/,
-          use: [
-            MiniCssExtractPlugin.loader,
-            {
-              loader: "css-loader",
-              options: {
-                modules: true,
-                importLoaders: 2
-              }
-            },
-            {
-              loader: "postcss-loader",
-              options: {
-                plugins: [require("autoprefixer")]
-              }
-            },
-            {
-              loader: "sass-loader"
-            }
-          ]
         }
       ]
     },
