@@ -45,11 +45,11 @@ route.delete("/", (req, res) => {
     });
 });
 
-//post {_id!,description?,completed?}
+//post {_id!,completed?}
 route.post("/", (req, res) => {
   Todo.findOneAndUpdate(
     { _id: req.body._id },
-    { completed: req.body.completed, description: req.body.description },
+    { completed: req.body.completed },
     { new: true }
   )
     .then(resData => {

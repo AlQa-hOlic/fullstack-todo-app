@@ -29,14 +29,13 @@ class Todo extends React.PureComponent {
       headers: { "content-type": "application/json" },
       body: JSON.stringify({
         _id: this.state.data._id,
-        completed: !this.state.data.completed,
-        description: this.state.description
+        completed: !this.state.data.completed
       })
     }).then(res =>
       res.json().then(resData => {
         console.log(resData);
         this.setState({
-          data: { ...resData.data, description: this.state.description },
+          data: { ...resData.data, description: this.state.data.description },
           loading: false
         });
       })
