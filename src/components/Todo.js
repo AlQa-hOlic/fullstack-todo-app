@@ -36,7 +36,7 @@ class Todo extends React.PureComponent {
       res.json().then(resData => {
         console.log(resData);
         this.setState({
-          data: resData.data,
+          data: { ...resData.data, description: this.state.description },
           loading: false
         });
       })
