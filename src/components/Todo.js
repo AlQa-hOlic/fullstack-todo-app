@@ -30,7 +30,7 @@ class Todo extends React.PureComponent {
       body: JSON.stringify({
         _id: this.state.data._id,
         completed: !this.state.data.completed,
-        description: ""
+        description: this.state.description
       })
     }).then(res =>
       res.json().then(resData => {
